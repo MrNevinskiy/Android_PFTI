@@ -1,4 +1,4 @@
-package com.example.android_pfti
+package com.example.android_pfti.view.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.navigation.findNavController
+import com.example.android_pfti.R
 import com.example.android_pfti.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupNavController() {
+        binding.bottomNavigationView.selectedItemId = R.id.listFragment
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             findNavController(R.id.main_activity_container).navigate(it.itemId)
             true
